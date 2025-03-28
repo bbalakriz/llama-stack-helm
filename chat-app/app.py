@@ -30,7 +30,7 @@ prompt = st.chat_input("Ask something...")
 if prompt:
     full_response = ""
     agent_config = AgentConfig(
-        model="llama32-3b",
+        model=os.getenv("MODEL_ID","llama32-3b"),
         instructions="You are a helpful customer service assistant, answer the following query relating to customer orders.",
         sampling_params={
             "strategy": {"type": "top_p", "temperature": 1.0, "top_p": 0.9},
