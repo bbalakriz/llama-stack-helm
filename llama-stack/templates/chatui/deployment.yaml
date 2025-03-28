@@ -32,7 +32,7 @@ spec:
             - name: BASE_URL
               value: http://llama-stack:5001
             - name: MODEL_ID
-              value: {{ .Values.chatui.model.id | quote }}
+              value: {{ .model.id | quote }}
           livenessProbe:
             {{- tpl (toYaml .livenessProbe) $ | nindent 12 }}
           readinessProbe:
